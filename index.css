@@ -20,8 +20,8 @@ body {
   border: 1px solid #a6a6a6;
   border-radius: 15px;
   padding: 7px;
-  max-width: 500px;
-  width: auto;
+  max-width: 300px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   position: sticky;
@@ -40,7 +40,7 @@ body {
   text-transform: uppercase; /* Efek tambahan untuk logo */
   padding: 5px 10px; /* Padding agar selaras dengan tautan */
 }
-.nav-link {
+.nav-link{
   border-radius: 20px;
   padding: 5px 15px;
   margin: 0;
@@ -49,12 +49,6 @@ body {
   text-decoration: none;
   color: #2e2e2e;
   transition: background 0.3s ease;
-}
-.nav-link:hover {
-  color: #118ab2;
-}
-.nav-link.active {
-  color: #118ab2;
 }
 
 .sectionTwo {
@@ -71,10 +65,22 @@ body {
   margin-top: 40px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 95%;
+  width: 100%;
   max-width: 1600px;
   text-align: center;
+  margin: 0 auto;
   border: 2px solid #ddd;
+}
+
+.nav-link i {
+  color: #2e2e2e;
+}
+
+.nav-link i:hover {
+  color: #118ab2;
+}
+.nav-link.active i {
+  color: #118ab2;
 }
 
 h1 {
@@ -194,10 +200,11 @@ th {
   margin-top: 10px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 95%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1600px;
   text-align: center;
   border: 2px solid #ddd;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -351,7 +358,7 @@ th {
   margin-top: 40px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 95%;
+  width: 100%;
   max-width: 1600px;
   text-align: center;
   border: 2px solid #ddd;
@@ -615,6 +622,12 @@ th {
     padding: 15px;
     width: 90%;
   }
+  span{
+  font-size: small;
+  }
+  .nav-list i{
+    padding: 5px 5px
+  }
   h1 {
     font-size: 2em;
   }
@@ -635,6 +648,9 @@ th {
   th,
   td {
     font-size: 0.9em;
+  }
+  .sectionOne, .sectionTwo, .sectionThree, .sectionFour, .sectionFive {
+    padding: 5px;
   }
   .output-container {
     display: flex;
