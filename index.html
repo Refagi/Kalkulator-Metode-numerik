@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Datang di Kalkulator Interpolasi</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.1/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="container-nav">
+      <div class="nav-list">
+        <span class="logo">Kalin</span>
+        <a href="#page1" class="nav-link">Perkenalan</a>
+        <a href="#page2" class="nav-link">Pembukaan</a>
+        <a href="#page3" class="nav-link">Penghitungan</a>
+      </div>
+    </nav>
+
+    <!-- PageOne: Informasi Kelompok -->
+    <section id="page1" class="sectionOne">
+      <div class="containerOne">
+        <h1>Kelompok II</h1>
+        <p>Kelompok Matakuliah Metode Numerik Semester 4</p>
+
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="card">
+              <img src="assets/reno.jpeg" alt="" />
+              <h3>Reno Faza Givaro</h3>
+              <p>202343501362</p>
+              <p class="quote">"Padahal Dunia Sementara"</p>
+            </div>
+            <div class="card">
+              <img src="assets/rapfli.jpeg" alt="" />
+              <h3>Rafli Mulya Hananta</h3>
+              <p>202343501356</p>
+              <p class="quote">"Deskripsi Singkat Cowo Ganteng”</p>
+            </div>
+            <div class="card">
+              <img src="assets/ababil.jpeg" alt="" />
+              <h3>Ababil Wahyu Nugroho</h3>
+              <p>202343501373</p>
+              <p class="quote">"Senyum aja terus, biar dikira hidup kita santai"</p>
+            </div>
+            <div class="card">
+              <img src="assets/bagas.jpeg" alt="" />
+              <h3>Bagas Dwi Susanto</h3>
+              <p>202343501351</p>
+              <p class="quote">wi wok de tok not onli tok de tok</p>
+            </div>
+          </div>
+          <div class="nav-buttons">
+            <button class="nav left">&#8249;</button>
+            <button class="nav right">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- PageTwo: Pembuka -->
+    <section id="page2" class="sectionTwo">
+      <div class="containerTwo">
+        <h1 id="tittle-sectionTwo"></h1>
+        <hr class="divider" />
+        <div class="description-box">
+          <p id="desc-sectionTwo">
+            "Dalam metode numerik, interpolasi adalah proses memperkirakan nilai
+            suatu fungsi pada titik-titik di antara titik-titik data yang
+            diketahui. Tujuannya adalah untuk menemukan titik data baru
+            berdasarkan data yang sudah ada, dengan cara mencari fungsi yang
+            paling mendekati atau melewati semua titik data tersebut."
+          </p>
+        </div>
+        <div class="nav-rubik">
+          <div id="rubikOne" style="width: 300px; height: 150px"></div>
+          <div id="rubikTwo" style="width: 300px; height: 150px"></div>
+          <div id="rubikThree" style="width: 300px; height: 150px"></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- PageThree: Kalkulator Interpolasi -->
+    <section id="page3" class="sectionThree">
+      <div class="calculator-containerThree">
+        <div class="calculator-header">
+          <button class="calc-tab active" data-method="linear" id="linear">
+            Interpolasi Linear
+          </button>
+          <button class="calc-tab" data-method="quadratic" id="quadratic">
+            Interpolasi Kuadratik
+          </button>
+          <button class="calc-tab" data-method="newton" id="newton">
+            Interpolasi Beda Newton
+          </button>
+          <button class="calc-tab" data-method="langrange" id="langrange">
+            Interpolasi Polinomial Lagrange
+          </button>
+        </div>
+
+        <!-- Dropdown (untuk layar kecil) -->
+        <div class="calculator-header dropdown-select">
+          <select id="methodSelect">
+            <option value="linear">Interpolasi Linear</option>
+            <option value="quadratic">Interpolasi Kuadratik</option>
+            <option value="newton">Interpolasi Beda Newton</option>
+            <option value="langrange">Interpolasi Langrange</option>
+          </select>
+        </div>
+
+        <div class="calculator-body">
+          <!-- Input Area -->
+          <div class="calc-left">
+            <div class="input-section">
+              <div class="form-group">
+                <label for="x-target">X:</label>
+                <input type="number" id="x-target" value="0" />
+              </div>
+              <div class="form-group">
+                <label for="x0">X₀:</label>
+                <input type="number" id="x0" value="0" />
+              </div>
+              <div class="form-group">
+                <label for="x1">X₁:</label>
+                <input type="number" id="x1" value="0" />
+              </div>
+              <div class="form-group">
+                <label for="Fx0">F(x₀):</label>
+                <input type="number" id="Fx0" value="0" />
+              </div>
+              <div class="form-group">
+                <label for="Fx1">F(x₁):</label>
+                <input type="number" id="Fx1" value="0" />
+              </div>
+            </div>
+
+              <div class="button-output">
+                <button class="button-hitung">Hitung</button>
+                <button class="button-reset">Reset</button>
+              </div>
+            <div class="output-container">
+               <div class="output-result">
+                <label for="result">F(x):</label>
+                <input type="number" id="result" readonly value="0" />
+               </div>
+            </div>
+          </div>
+        </div>
+        <div class="button-item-intgrasi-three">
+          <button class="button-integrasi-three">Integrasi Numerik &raquo;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- page4 -->
+   <section id="page4" class="sectionFour">
+      <div class="calculator-containerFour">
+        <div class="calculator-header-page4">
+          <button class="calc-tab-four active" data-method="trapezium" id="trapezium">
+            Metode Trapezium
+          </button>
+          <button class="calc-tab-four" data-method="simpsonSepertiga" id="simpsonSepertiga">
+            Metode Simpson 1/3
+          </button>
+          <button class="calc-tab-four" data-method="simpsonSeperlapan" id="simpsonSeperlapan">
+            Metode Simpson 3/8
+          </button>
+        </div>
+
+        <!-- Dropdown (untuk layar kecil) -->
+        <div class="calculator-header-page4 dropdown-select">
+          <select id="methodSelect-page4">
+            <option value="trapezium">Metode Trapezium</option>
+            <option value="simpsonSepertiga">Metode Simpson 1/3</option>
+            <option value="simpsonSeperlapan">Metode Simpson 3/8</option>
+          </select>
+        </div>
+
+        <div class="calculator-body-page4">
+          <!-- Input Area -->
+          <div class="calc-left">
+            <div class="input-section">
+              <div class="form-group">
+                <label for="a">a:</label>
+                <input type="number" id="a" value="0" />
+              </div>
+              <div class="form-group">
+                <label for="b">b:</label>
+                <input type="number" id="b" value="0" />
+              </div>
+             <div class="form-group">
+                <label for="n">n:</label>
+                <input type="number" id="n" placeholder="?" />
+             </div>
+             <div class="form-group">
+                <label for="h">h:</label>
+                <input type="number" id="h" placeholder="?" />
+             </div>
+             <div class="form-group">
+                <label for="fx">Fx:
+                <input type="text" id="fx" placeholder="?"/>
+                  <details>
+                    <summary>Contoh input fungsi</summary>
+                    <p>4*x^2 + x^2 - 5<br /> untuk akar pakai: <br/> sqrt(4*x^2 + x^2 - 5)</p>
+                  </details>
+             </div>
+             <div class="form-group">
+                <label for="eksak">eksak</label>
+                <input type="number" id="eksak" placeholder="?"/>
+             </div>
+            </div>
+
+              <div class="button-output">
+                <button class="button-hitung">Hitung</button>
+                <button class="button-reset">Reset</button>
+              </div>
+              <div id="dynamic-xi-fi" class="input-section"></div>
+          </div>
+        </div>
+
+        <div class="button-next-previous-four">
+        <div class="button-item-intgrasi-back">
+          <button class="button-integrasi-back">&laquo; Interpolasi</button>
+        </div>
+        <div class="button-item-intgrasi-next">
+          <button class="button-integrasi-next">Differensial &raquo;</button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+<!-- page5 -->
+<section id="page5" class="sectionFive">
+  <div class="calculator-containerFive">
+    <div class="calculator-header-page5">
+      <button class="calc-tab-five active" data-method="euler" id="euler">
+        Metode Euler
+      </button>
+      <button class="calc-tab-five" data-method="rungeKutta" id="rungeKutta">
+        Metode Runge-Kutta
+      </button>
+    </div>
+
+    <div class="calculator-header-page5 dropdown-select">
+      <select id="methodSelect-page5">
+        <option value="euler">Metode Euler</option>
+        <option value="rungeKutta">Metode Runge-Kutta</option>
+      </select>
+    </div>
+
+    <div class="calculator-body-page5">
+      <div class="calc-left">
+        <div class="input-section">
+          <div class="form-group">
+            <label for="fxd">f(x, y):</label>
+            <input type="text" id="fxd" placeholder="Contoh: x + y" />
+          </div>
+          <div class="form-group">
+            <label for="x0-d">x₀:</label>
+            <input type="number" id="x0-d" />
+          </div>
+          <div class="form-group">
+            <label for="y0-d">y₀:</label>
+            <input type="number" id="y0-d" />
+          </div>
+          <div class="form-group">
+            <label for="h-d">h:</label>
+            <input type="number" id="h-d" />
+          </div>
+          <div class="form-group">
+            <label for="n-d">n:</label>
+            <input type="number" id="n-d" />
+          </div>
+          <div class="form-group">
+            <label for="xn-d">y target:</label>
+            <input type="number" id="xn-d" />
+          </div>
+        </div>
+
+        <div class="button-output">
+          <button class="button-hitung">Hitung</button>
+          <button class="button-reset">Reset</button>
+        </div>
+        <div id="dynamic-fxy"></div>
+      </div>
+    </div>
+        <div class="button-item-integrasi-five">
+          <button class="button-integrasi-back-five">&laquo; Integrasi Numerik</button>
+        </div>
+  </div>
+</section>
+
+
+    <!-- Popup -->
+    <div class="bg-langrange" id="langrangeModal">
+      <div class="container-langrange">
+        <div class="element-title">
+          <h3>Pilih Orde Interpolasi Lagrange</h3>
+          <span class="close-langrange" id="closeLangrangeModal"
+            ><i>&times;</i></span
+          >
+        </div>
+        <div class="item-langrange">
+          <div class="element-langrange-check">
+            <button class="orde" data-method="orde1">Orde 1</button>
+            <button class="orde" data-method="orde2">Orde 2</button>
+            <button class="orde" data-method="orde3">Orde 3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const rubiks = ["rubikOne", "rubikTwo", "rubikThree"];
+      rubiks.forEach((id) => {
+        lottie.loadAnimation({
+          container: document.getElementById(id),
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          path: "rubik.json",
+        });
+      });
+
+      function navLink() {
+        $(".nav-link").click(function (e) {
+          e.preventDefault();
+          const target = $(this).attr("href");
+
+          $("html, body").animate(
+            {
+              scrollTop: $(target).offset().top,
+            },
+            600
+          );
+          $(".nav-link").removeClass("active");
+          $(this).addClass("active");
+        });
+      }
+      navLink();
+    </script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algebrite@1.4.0/dist/algebrite.bundle-for-browser.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
