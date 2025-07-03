@@ -16,7 +16,7 @@ $(document).ready(function () {
       .delete(1)
       .type("t")
       .move(3)
-      .type(" di Kalkulator Interpolasi")
+      .type(" di Kalkulator Interpolasi, Integrasi Numerik, dan Persamaan Differensial")
       .pause(2000)
       .go();
   }
@@ -398,7 +398,7 @@ $(document).ready(function () {
     const l2 = parseFloat(
       ((x - x0) / (x2 - x0)) * ((x - x1) / (x2 - x1)) * ((x - x3) / (x2 - x3))
     );
-    $("#l2t").val(l2.toFixed(4));
+    $("#l2").val(l2.toFixed(4));
     const l3 = parseFloat(
       ((x - x0) / (x3 - x0)) * ((x - x1) / (x3 - x1)) * ((x - x2) / (x3 - x2))
     );
@@ -834,7 +834,7 @@ function countMetodeRungeKutta() {
   });
 
   $("#linear").click(() => {
-    $("#x2, #Fx2, #x3, #Fx3, #b0, #b1, #b2").parent().remove();
+    $("#b0, #b1, #b2, #b3, #c1, #c2, #d1, #d2, #x2, #Fx2, #x3, #Fx3, #l0, #l1, #l2, #l3").parent().remove();
   });
   $("#quadratic").click(toggleInterpolasiKuadratik);
   $("#newton").click(toggleInterpolasiBagiNewton);
