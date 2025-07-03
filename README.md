@@ -3,7 +3,7 @@
 **Untuk menghitung fungsinya(x, y), saya menggunakan library _Math.js_ dan _Algebrite.js_**
 
 ### Syntax Menghitung Interpolasi Linier
-```json
+```javascript
   function countInterpolasiLinear() {
     const x = parseFloat($("#x-target").val());
     const x0 = parseFloat($("#x0").val());
@@ -20,7 +20,7 @@
 ```
 
 ### Syntax Menghitung Interpolasi Kuadratik
-```json
+```javascript
   function countInterpolasiKuadratik() {
     const x = parseFloat($("#x-target").val());
     const x0 = parseFloat($("#x0").val());
@@ -54,7 +54,7 @@
 
 
 ### Syntax Menghitung Interpolasi Bagi Newton
-```json
+```javascript
   function countInterpolasiBagiNewton() {
     const x = parseFloat($("#x-target").val());
     const x0 = parseFloat($("#x0").val());
@@ -106,7 +106,7 @@
 ### Syntax Menghitung Interpolasi Langrange
 
 **Langrange Orde 1**
-```json
+```javascript
   function countInterpolasiLagrangeOrdeOne() {
     toggleInterpolasiPolinomialLangrangeOne();
     const x = parseFloat($("#x-target").val());
@@ -128,7 +128,7 @@
 ```
 
 **Langrange Orde 2**
-```json
+```javascript
   function countInterpolasiLagrangeOrdeTwo() {
     const x = parseFloat($("#x-target").val());
     const x0 = parseFloat($("#x0").val());
@@ -161,7 +161,7 @@
 ```
 
 **Langrange Orde 3**
-```json
+```javascript
   function countInterpolasiLagrangeOrdeThree() {
     const x = parseFloat($("#x-target").val());
     const x0 = parseFloat($("#x0").val());
@@ -210,7 +210,7 @@
 
 ## Syntax Menghitung Integrasi Numerik
 
-```json
+```javascript
   function getIntegrasiNumerik() {
     let a = parseFloat($("#a").val());
     let b = parseFloat($("#b").val());
@@ -224,7 +224,7 @@
 ```
 
 **Metode Trapezium**
-```json
+```javascript
   function countTrapezium() {
     let { a, b, n, h, fx, eksak } = getIntegrasiNumerik();
 
@@ -303,7 +303,7 @@
 ```
 
 **Metode Simpson 1/3**
-```json
+```javascript
   function countSimpsonSepertiga() {
     let { a, b, n, h, fx, eksak } = getIntegrasiNumerik();
 
@@ -386,7 +386,7 @@
 ```
 
 **Metode Simpson 3/8**
-```json
+```javascript
 function countSimpsonSeperlapan() {
     let { a, b, n, h, fx, eksak } = getIntegrasiNumerik();
 
@@ -473,7 +473,7 @@ function countSimpsonSeperlapan() {
 ### Syntax Menghitung Persamaan Differensial
 
 **Hitung persamaan fungsinya**
-```json
+```javascript
   function evaluateFxy(expr, x, yEuler) {
     const compiled = math.parse(expr).compile();
     return compiled.evaluate({ x, y: yEuler });
@@ -481,7 +481,7 @@ function countSimpsonSeperlapan() {
 ```
 
 **Hitung integral dari persamaan fungsi**
-```json
+```javascript
   function getExactFunctionWithAlgebrite(fxStr, x0, y0) {
     const defInt = `defint(${fxStr}, x, ${x0}, x)`;
     const integralExpr = Algebrite.run(defInt);
@@ -491,7 +491,7 @@ function countSimpsonSeperlapan() {
 ```
 
 **Metode Euler**
-```json
+```javascript
   function getValPersDiff() {
     const x0 = parseFloat($("#x0-d").val());
     const y0 = parseFloat($("#y0-d").val());
@@ -566,7 +566,7 @@ function countMetodeEuler() {
 
 
 **Metode Runge-Kutta**
-```json
+```javascript
   function getValPersDiff() {
     const x0 = parseFloat($("#x0-d").val());
     const y0 = parseFloat($("#y0-d").val());
