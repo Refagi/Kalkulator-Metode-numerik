@@ -261,26 +261,36 @@ $(document).ready(function () {
     resetInput();
     $("#result")
       .parent()
-      .before(
+      .after(
         `<div class="output-result"><label for="l0">L₀:</label><input type="number" id="l0" value="0"></div>`
       );
     $("#l0")
       .parent()
-      .before(
+      .after(
         `<div class="output-result"><label for="l1">L₁:</label><input type="number" id="l1" value="0"></div>`
       );
   }
 
   function toggleInterpolasiPolinomialLangrangeTwo() {
     resetInput();
+    $("#x1")
+      .parent()
+      .after(
+        `<div class="form-group"><label for="x2">X₂:</label><input type="number" id="x2" value="0"></div>`
+    );
+    $("#Fx1")
+      .parent()
+      .after(
+        `<div class="form-group"><label for="Fx2">F(x₂):</label><input type="number" id="Fx2" value="0"></div>`
+    );
     $("#result")
       .parent()
-      .before(
+      .after(
         `<div class="output-result"><label for="l0">L₀:</label><input type="number" id="l0" value="0"></div>`
       );
     $("#l0")
       .parent()
-      .before(
+      .after(
         `<div class="output-result"><label for="l1">L₁:</label><input type="number" id="l1" value="0"></div>`
       );
     $("#l1")
@@ -292,14 +302,34 @@ $(document).ready(function () {
 
   function toggleInterpolasiPolinomialLangrangeThree() {
     resetInput();
+    $("#x1")
+      .parent()
+      .after(
+        `<div class="form-group"><label for="x2">X₂:</label><input type="number" id="x2" value="0"></div>`
+    );
+    $("#x2")
+      .parent()
+      .after(
+        `<div class="form-group"><label for="x3">X₃:</label><input type="number" id="x3" value="0"></div>`
+    );
+    $("#Fx1")
+      .parent()
+      .after(
+        `<div class="form-group"><label for="Fx2">F(x₂):</label><input type="number" id="Fx2" value="0"></div>`
+    );
+    $("#Fx2")
+      .parent()
+      .after(
+        `<div class="form-group"><label for="Fx3">F(X₃):</label><input type="number" id="Fx3" value="0"></div>`
+    );
     $("#result")
       .parent()
-      .before(
+      .after(
         `<div class="output-result"><label for="l0">L₀:</label><input type="number" id="l0" value="0"></div>`
       );
     $("#l0")
       .parent()
-      .before(
+      .after(
         `<div class="output-result"><label for="l1">L₁:</label><input type="number" id="l1" value="0"></div>`
       );
     $("#l1")
