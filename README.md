@@ -1,6 +1,14 @@
 # Kalkulator-Metode-numerik
 **Membuat Program Metode Numerik yang diimplementasikan menjadi sebuah kalkulator sederhana**
 **Untuk menghitung fungsinya(x, y), saya menggunakan library _Math.js_ dan _Algebrite.js_**
+**Program ini di buat untuk menunjang Tugas Metode Numerik di Semester 4**
+
+### Kelompok 2 
+- Reno Faza Givaro (202343501362)
+- Rafli Mulya Hananta (202343501356)
+- Ababil Wahyu Nugroho (202343501373)
+- Bagas Dwi Susanto (202343501351)
+
 
 ### Syntax Menghitung Interpolasi Linier
 ```javascript
