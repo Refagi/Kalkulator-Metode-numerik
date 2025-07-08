@@ -221,20 +221,9 @@ $(document).ready(function () {
     const fx1 = parseFloat($("#Fx1").val());
     const fx2 = parseFloat($("#Fx2").val());
     const fx3 = parseFloat($("#Fx3").val());
-    if (
-      isNaN(x) ||
-      isNaN(x0) ||
-      isNaN(x1) ||
-      isNaN(x2) ||
-      isNaN(x3) ||
-      isNaN(fx0) ||
-      isNaN(fx1) ||
-      isNaN(fx2) ||
-      isNaN(fx3)
-    ) {
+    if (isNaN(x) || isNaN(x0) || isNaN(x1) || isNaN(x2) || isNaN(x3) || isNaN(fx0) || isNaN(fx1) || isNaN(fx2) || isNaN(fx3)) {
       alert("Input Tidak Boleh Kosong Bro!");
-      return;
-    }
+      return;}
     const b0 = fx0;
     $("#b0").val(b0.toFixed(4));
     const b1 = (fx1 - fx0) / (x1 - x0);
@@ -247,7 +236,7 @@ $(document).ready(function () {
     $("#b2").val(b2.toFixed(4));
     const c2 = (d1 - c1) / (x3 - x1);
     $("#c2").val(c2.toFixed(4));
-    const b3 = (c2 - b2) / (x3 - x0);
+    const b3 = Math.abs((c2 - b2) / (x3 - x0));
     $("#b3").val(b3.toFixed(4));
     const result =
       b0 +
