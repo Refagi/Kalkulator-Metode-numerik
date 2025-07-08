@@ -732,10 +732,11 @@ function countMetodeEuler() {
     const fxyVal = evaluateFxy(fxy, x, yEuler);
     let yEksak = "-";
     let galat = "-";
+    yEuler = yEuler + (fxyVal * h);
 
     if (!includeY && compiledExact) {
       yEksak = compiledExact.evaluate({ x });
-      galat = Math.abs(((yEksak - yEuler) / yEksak) * 100);
+      galat = Math.abs(((yEksak - yEuler) / yEksak)) * 100;
     }
 
     table += `
@@ -747,7 +748,6 @@ function countMetodeEuler() {
       <td>${typeof galat === "number" ? galat.toFixed(4) : "-"}</td>
     </tr>`;
 
-    yEuler = yEuler + (fxyVal * h);
     console.log(`f(x,y)${i}: `, fxyVal)
     console.log(`y${i}: `, yEuler)
     x = x + h;
